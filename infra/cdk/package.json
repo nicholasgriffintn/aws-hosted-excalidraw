@@ -1,0 +1,26 @@
+{
+  "name": "@aws-hosted-excalidraw/infra-cdk",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "watch": "tsc -w -p tsconfig.json",
+    "cdk": "cdk",
+    "bootstrap": "cdk bootstrap",
+    "synth": "cdk synth",
+    "deploy": "cdk deploy --all"
+  },
+  "devDependencies": {
+    "@types/node": "22.10.1",
+    "aws-cdk": "^2.1030.0",
+    "aws-cdk-lib": "^2.152.0",
+    "constructs": "10.3.0",
+    "esbuild": "0.24.0",
+    "source-map-support": "0.5.21",
+    "ts-node": "10.9.2",
+    "typescript": "5.9.3"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+  - infra/*
+
+ignoredBuiltDependencies:
+  - '@parcel/watcher'
+  - esbuild
+
+onlyBuiltDependencies:
+  - sqlite3

@@ -1,0 +1,24 @@
+{
+  "name": "aws-hosted-excalidraw",
+  "version": "1.0.0",
+  "description": "A self-hosted version of Excalidraw for the your team.",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm -r run dev",
+    "build": "pnpm -r run build",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "devDependencies": {
+    "@aws-sdk/client-apigatewaymanagementapi": "3.913.0",
+    "@aws-sdk/client-dynamodb": "3.913.0",
+    "@aws-sdk/client-s3": "3.913.0",
+    "@aws-sdk/lib-dynamodb": "3.913.0",
+    "@aws-sdk/s3-request-presigner": "3.913.0",
+    "@aws-sdk/util-dynamodb": "3.913.0",
+    "@types/aws-lambda": "^8.10.156",
+    "@types/node": "22.10.1"
+  }
+}

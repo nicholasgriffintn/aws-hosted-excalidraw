@@ -1,0 +1,23 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - VITE_EXCALIDRAW_ASSET_BUCKET=${EXCALIDRAW_ASSET_BUCKET:-example-bucket}
+        - VITE_EXCALIDRAW_TEAM_ID=${EXCALIDRAW_TEAM_ID:-default}
+        - VITE_AWS_REGION=${AWS_REGION:-eu-west-1}
+        - EXCALIDRAW_API_URL=${EXCALIDRAW_API_URL:-https://example-api.execute-api.eu-west-1.amazonaws.com/prod}
+        - EXCALIDRAW_WS_URL=${EXCALIDRAW_WS_URL:-wss://example-ws.execute-api.eu-west-1.amazonaws.com/prod}
+    ports:
+      - '4002:3000'
+    environment:
+      - EXCALIDRAW_API_URL=${EXCALIDRAW_API_URL:-https://example-api.execute-api.eu-west-1.amazonaws.com/prod}
+      - EXCALIDRAW_WS_URL=${EXCALIDRAW_WS_URL:-wss://example-ws.execute-api.eu-west-1.amazonaws.com/prod}
+      - VITE_EXCALIDRAW_ASSET_BUCKET=${EXCALIDRAW_ASSET_BUCKET:-example-bucket}
+      - VITE_EXCALIDRAW_TEAM_ID=${EXCALIDRAW_TEAM_ID:-default}
+      - VITE_AWS_REGION=${AWS_REGION:-eu-west-1}
+      - AWS_PROFILE=${AWS_PROFILE:-default}
+    volumes:
+      - ~/.aws:/home/node/.aws:ro
+    restart: unless-stopped

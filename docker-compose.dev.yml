@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - EXCALIDRAW_API_URL=${EXCALIDRAW_API_URL:-https://example-api.execute-api.eu-west-1.amazonaws.com/prod}
+      - EXCALIDRAW_WS_URL=${EXCALIDRAW_WS_URL:-wss://example-ws.execute-api.eu-west-1.amazonaws.com/prod}
+      - VITE_EXCALIDRAW_ASSET_BUCKET=${EXCALIDRAW_ASSET_BUCKET:-example-bucket}
+      - VITE_EXCALIDRAW_TEAM_ID=${EXCALIDRAW_TEAM_ID:-default}
+      - VITE_AWS_REGION=${AWS_REGION:-eu-west-1}
+      - AWS_PROFILE=${AWS_PROFILE:-default}
+    restart: unless-stopped
+    volumes:
+      - ~/.aws:/home/node/.aws:ro
+    networks:
+      - excalidraw-network
+
+networks:
+  excalidraw-network:
+    driver: bridge

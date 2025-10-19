@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71% 4%;
+    --muted: 223 10% 80%;
+    --muted-foreground: 223 15% 30%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71% 4%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71% 4%;
+    --border: 223 13% 87%;
+    --input: 223 13% 87%;
+    --primary: 243 75% 67%;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 223 17% 93%;
+    --secondary-foreground: 224 71% 4%;
+    --accent: 222 75% 61%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 243 75% 67%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 224 47% 7%;
+    --foreground: 210 20% 95%;
+    --muted: 223 14% 20%;
+    --muted-foreground: 224 10% 65%;
+    --popover: 224 47% 7%;
+    --popover-foreground: 210 20% 95%;
+    --card: 224 47% 7%;
+    --card-foreground: 210 20% 95%;
+    --border: 224 14% 20%;
+    --input: 224 14% 20%;
+    --primary: 243 75% 69%;
+    --primary-foreground: 224 47% 7%;
+    --secondary: 224 14% 20%;
+    --secondary-foreground: 210 20% 95%;
+    --accent: 222 75% 61%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --ring: 243 75% 69%;
+  }
+
+  *,
+  *::before,
+  *::after {
+    border-color: hsl(var(--border));
+  }
+
+  html {
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  button {
+    font: inherit;
+  }
+}
+
+.excalidraw {
+  height: calc(100vh - 60px)
+}
